@@ -180,7 +180,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">EGISTRAR NUEVO USUARIO</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">REGISTRAR NUEVO USUARIO</h5>
             </div>
             <div class="modal-body">
                 <form method="POST"
@@ -194,6 +194,16 @@
                         <div class="col">
                             <label for="">Correo</label>
                             <input type="email" name="email" class="form-control" value="" placeholder="Contraseña">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="">Genero</label>
+                            <select class="form-control" name="genero" id="genero" name="genero">
+                                <option value="">Seleccione</option>
+                                <option value="1">Masculino</option>
+                                <option value="2">Femenino</option>
+                            </select>
                         </div>
                     </div>
                     <div class="row">

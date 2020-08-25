@@ -42,12 +42,13 @@ class UserController
     }
 
     public function create(){
-        $user = new User();
-        $user->id = $_REQUEST['id'];
-        $user->name = $_REQUEST['name'];
-        $user->email = $_REQUEST['email'];
+        $user           = new User();
+        $user->id       = $_REQUEST['id'];
+        $user->name     = $_REQUEST['name'];
+        $user->email    = $_REQUEST['email'];
+        $user->genero   = $_REQUEST['genero'];
         $user->password = $_REQUEST['password'];
-        $user->level = $_REQUEST['level'];
+        $user->level    = $_REQUEST['level'];
         $this->model->create($user);
         $c = Conexion::encryptor('encrypt', 'user');
         $listar = Conexion::encryptor('encrypt', 'listar');
@@ -78,6 +79,7 @@ class UserController
             $lastAccess = $this->model->lastAccess($row->id);
             $_SESSION['id']   = $row->id;
             $_SESSION['name'] = $row->name;
+            $_SESSION['genero'] = $row->genero;
         }
         header('Location: index.php');
     }

@@ -6,6 +6,7 @@ class User {
     public $id;
     public $name;
     public $email;
+    public $genero;
     public $password;
     public $level;
     public $active;
@@ -63,8 +64,8 @@ class User {
     public function create($user)
     {
         $password = Conexion::encryptor('encrypt', $user->password);
-        $stm = $this->pdo->prepare("INSERT INTO  users (name, email, password, level) VALUES(?,?,?,?)");
-        $stm->execute(array(strtoupper($user->name), strtoupper($user->email), $password, $user->level));
+        $stm = $this->pdo->prepare("INSERT INTO  users (name, email, genero, password, level) VALUES(?,?,?,?,?)");
+        $stm->execute(array(strtoupper($user->name), strtoupper($user->email), $user->genero, $password, $user->level));
     }
 
     public function delete($id)
